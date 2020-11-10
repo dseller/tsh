@@ -58,3 +58,4 @@ lex.yy.c
 tsh.tab.c
 lex.yy.h
 tsh.tab.h
+CMakeCache.txt
