@@ -20,6 +20,7 @@ const char *dostring(const char *);
 %}
 
 %option yylineno
+%option noyywrap
 
 %%
 
@@ -40,8 +41,9 @@ const char *dostring(const char *);
 "return"									{ return T_RETURN; }
 "static"									{ return T_STATIC; }
 "switch"									{ return T_SWITCH; }
-"void"                                      { return T_VOID; }
 "while"										{ return T_WHILE; }
+"U0"										{ return T_U0; }
+"U8"										{ return T_U8; }
 [a-zA-Z_@]([a-zA-Z0-9_@])*					{ yylval.str = strdup(yytext); return T_SYMBOL; }
 "!"											{ return T_BANG; }
 "{"											{ return T_BOPEN; }

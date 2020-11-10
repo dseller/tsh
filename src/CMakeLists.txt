@@ -7,10 +7,14 @@ FLEX_TARGET(scanner tsh.l ${PROJECT_SOURCE_DIR}/src/lex.yy.c COMPILE_FLAGS "--he
 BISON_TARGET(parser tsh.y ${PROJECT_SOURCE_DIR}/src/tsh.tab.c COMPILE_FLAGS "--defines=../include/tsh.tab.h")
 ADD_FLEX_BISON_DEPENDENCY(scanner parser)
 
+add_definitions(-DYY_NO_UNISTD_H)
 add_executable(tsh
     tsh.c
     tsh.l
     tsh.y
+    ast.c
+    vm.c
+    list.c
     convert.c
     ${FLEX_scanner_OUTPUTS}
     ${BISON_parser_OUTPUTS}

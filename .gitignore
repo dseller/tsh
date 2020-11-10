@@ -60,3 +60,5 @@ lex.yy.h
 tsh.tab.h
 CMakeCache.txt
 Makefile
+CMakeSettings.json
+.vs
